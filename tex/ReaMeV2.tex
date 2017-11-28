@@ -1,0 +1,92 @@
+\documentclass[10pt,a4paper,notitlepage,onecolumn]{article}
+%----------Style Section
+
+
+
+\usepackage[latin1]{inputenc}
+
+\usepackage[english]{babel} %English Corrections
+
+
+\usepackage[default]{lato} %Change font to lato
+\usepackage[T1]{fontenc}
+
+\usepackage[justification=RaggedRight,singlelinecheck=off]{caption} %Left aligns all captions
+\captionsetup[longtable]{format=hang,justification=raggedright,singlelinecheck=false} %should left align all longtable catpions as well
+
+\usepackage{hyperref} % allows to include hyperrefs such as links etc
+
+\usepackage{array}
+
+\usepackage{ booktabs, longtable}
+\setlength{\LTleft}{0pt} %Left align all longtables
+%\usepackage[plainnat]{natbib}
+
+
+\usepackage[pdftex]{graphicx}
+\usepackage{fancyhdr} %necessary for title page. why ever... :-)
+\usepackage{epstopdf}
+\usepackage{float}
+
+\usepackage[top=3.5cm, bottom=3cm, inner=4.0cm, outer=3.0cm]{geometry} %Change margins
+%\usepackage{layout}
+
+%\usepackage{showframe} %Package allows to plot margins
+
+
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcommand\mpar[1]{\marginpar {\flushleft\small #1}}
+\setlength{\marginparwidth}{3cm}
+
+
+\begin{document}
+
+
+\begin{raggedright}
+
+\subsection*{ftblData Read Me}
+Jonas Stillhard, November 2017\\
+\href{mailto:jonas.stillhard@wsl.ch}{jonas.stillhard@wsl.ch}
+
+\subsection*{Available Datasets}
+\subsubsection*{Football Data}
+The available datasets are partially described in pres1.pdf. It might be worth to check out   \href{http://www.footballsquads.co.uk/national.htm}{\textbf{footballsquads.co.uk}}. They provide squad data for all world cups back to 1950, i did not find an API so far to get the datasets. 
+
+\subsubsection*{World Bank data} 
+World bank data can be downloaded via the \href{https://data.worldbank.org/}{\textbf{world banks online interface}}. An API is available but it proved to be easier to just download the data as .csv from the website rather than getting it via the API. 
+
+\subsubsection*{Other datasets}
+So far, i focused on World Bank datasets. Datasets such as the \href{https://data.world/jemus42/world-penis-data}{\textbf{World Penis dataset}} need a registration, but might be worth having a look at. 
+
+\subsubsection*{Datasets within repository}
+The following datasets are available within the repository in \texttt{'./1\_data'} \\
+\begin{itemize}
+\item[-] worldcup.db: Downloaded from \href{https://github.com/openfootball}{\textbf{openfootball.db}}. \\
+\item[-] wc 2014 data: json from \href{https://github.com/jokecamp/FootballData}{\textbf{Joe Kampschmidts}} github repository. Not physically available in the repo but as part of the script \texttt{1\_Get\_Data.R}. \\
+\item[-] wdi.RDS: Downloaded as csv from the \href{https://data.worldbank.org/}{\textbf{world banks data site}}. Contains 500+ Indicators, of which only few are available for all countries. Dataset was subset to the countries that ever participated in a World Cup. \\
+\item[-] Gender Stats: Contains 630 gender-related indicators such as \textit{Women who believe a husband is justified in beating his wife when she refuses sex with him (\%)}. Dataset was subset to the countries that ever participated in a World Cup. 
+\item[-] World Government Indicators (WGI): Contains government 36 related indicators. Dataset was subset to the countries that ever participated in a World Cup.  \\
+\item[-] The files events\_teams.RDS,  World\_Cup\_Doubled\_up.RDS, worldcups.RDS, worldCupSummary.RDS and WorldCupSummaryAll.RDs are generated within one of the above mentioned scripts. 
+\end{itemize} 
+
+
+\subsection*{Scripts}
+The Repository contains the following scripts and some other, deprecated scripts within the folder 4\_Scripts/deprecated
+\subsubsection*{1\_Get\_Data.R}
+The Script loads data from the sqLite database worldcups.db via package \texttt{sqLite} and does some data manipulation to the data loaded. In a second step, world cup 2014 data is loaded from \href{https://github.com/jokecamp/FootballData}{\textbf{Joe Kampschmidts}} git repo. The data is exported as .RDS. 
+\subsubsection*{2\_Create\_Clean\_Country\_Codes.R}
+Creates codes for matching with world bank datasets for (most) of the teams/countries. As for some countries (e.g., Soviet Union), no world bank datasets are available, they are removed in a latter script. 
+\subsubsection*{3\_PrepareFtblDataForCorrelation.R}
+Creates three datasets: A dataset with summaries for every country for every world cup, a dataset with the summaries but also containing lines without any values for world cups that a team missed and a 'doubled up' dataset. That dataset might not be needed, it contains every game played on two lines, so every team appears in both columns (teamA and teamH etc.). Could be useful for analyses on game level. 
+
+\subsubsection*{4\_Add\_World\_Bank\_Data.R}
+Adds world bank data to the extended dataset (Teams appear even if they missed a world cup). 
+Should be improved. 
+
+
+
+
+\end{raggedright}
+
+
+\end{document}
