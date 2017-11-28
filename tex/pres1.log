@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.4)  24 NOV 2017 09:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.10.4)  28 NOV 2017 16:31
 entering extended mode
 **./pres1.tex
 (pres1.tex
@@ -1292,10 +1292,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 30519 strings out of 493334
- 749647 string characters out of 3136672
+ 30517 strings out of 493334
+ 749631 string characters out of 3136672
  963213 words of memory out of 3000000
- 33379 multiletter control sequences out of 15000+200000
+ 33377 multiletter control sequences out of 15000+200000
  9704 words of font info for 36 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,13n,98p,1830b,757s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1305,7 +1305,7 @@ Here is how much of TeX's memory you used:
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on pres1.pdf (10 pages, 96767 bytes).
+Output written on pres1.pdf (10 pages, 96420 bytes).
 PDF statistics:
  110 PDF objects out of 1000 (max. 8388607)
  21 named destinations out of 1000 (max. 500000)
